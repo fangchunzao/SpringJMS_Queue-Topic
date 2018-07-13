@@ -22,6 +22,7 @@ import javax.jms.ConnectionFactory;
 @EnableJms
 public class JmsConfig {
 
+    // 配置topic工厂
     @Bean
     public JmsListenerContainerFactory<?> topicListenerFactory(ConnectionFactory connectionFactory,
                                                                DefaultJmsListenerContainerFactoryConfigurer configurer) {
@@ -33,6 +34,7 @@ public class JmsConfig {
         return factory;
     }
 
+    // 配置queue工厂
     @Bean
     public JmsListenerContainerFactory<?> queueListenerFactory(ConnectionFactory connectionFactory,
                                                                DefaultJmsListenerContainerFactoryConfigurer configurer) {
@@ -45,7 +47,7 @@ public class JmsConfig {
     }
 
     @Bean
-    public MessageConverter jacksonJmsMessageConverter() { // 可以传送对象
+    public MessageConverter jacksonJmsMessageConverter() {   //配置后可以send 一个实体类
         MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
         converter.setTargetType(MessageType.TEXT);
         converter.setTypeIdPropertyName("_type");

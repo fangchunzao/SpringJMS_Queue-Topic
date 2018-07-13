@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author FangChunZao
- * @Description:
+ * @Description: queue 消费者
  * @date 2018/7/6
  */
 @Service

@@ -19,13 +19,13 @@ import java.util.Map;
  * @date 2018/7/6
  */
 @RestController
-@RequestMapping(value = "/test/producer", produces = "application/json")
+@RequestMapping(value = "/producer")
 public class ProducerRest {
 
     @Autowired
     private ActiveMQManager activeMQManager;
 
-    @RequestMapping(value = "/add/queue", method = RequestMethod.GET)
+    @RequestMapping(value = "/queue", method = RequestMethod.GET)
     public void addQueue() {
         // 设置队列
         Destination destination = new ActiveMQQueue("MessageQueueTest1");
@@ -37,7 +37,7 @@ public class ProducerRest {
         activeMQManager.send(destination, people);
     }
 
-    @RequestMapping(value = "/add/topic", method = RequestMethod.GET)
+    @RequestMapping(value = "/topic", method = RequestMethod.GET)
     public void addTopic() {
         Destination destination = new ActiveMQTopic("MessageTopicTest1");
         // 初始化一个类

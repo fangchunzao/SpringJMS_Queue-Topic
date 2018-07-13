@@ -19,7 +19,7 @@ public class ActiveMQManager{
     private JmsMessagingTemplate jmsMessagingTemplate;
 
     /**
-     * 即时发送 数据
+     * 发送数据
      */
     public void send(Destination destination, Object date) {
         this.jmsMessagingTemplate.convertAndSend(destination,date);
