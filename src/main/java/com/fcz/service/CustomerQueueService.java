@@ -15,13 +15,13 @@ public class CustomerQueueService {
 
     @JmsListener(destination = "MessageQueueTest1",containerFactory = "queueListenerFactory")
     public void sendPeople(People people) {
-        System.out.println("成功监听MessageQueueTest1消息队列，准备发送人信息");
+        System.out.println("成功监听MessageQueueTest1消息队列，准备发送信息1");
         System.out.println("监控People --- Name : " + people.getName() + " Email : " + people .getEmail());
     }
 
     @JmsListener(destination = "MessageQueueTest1", containerFactory = "queueListenerFactory")
     public void sendEmail(People  people) {
-        System.out.println("成功监听MessageQueueTest1消息队列，准备发送邮件信息");
+        System.out.println("成功监听MessageQueueTest1消息队列，准备发送信息2");
         System.out.println("监控People --- Name : " + people.getName() + " Email : " + people .getEmail());
     }
 
